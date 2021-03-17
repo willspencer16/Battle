@@ -17,3 +17,5 @@ source "https://rubygems.org" do
 end
   
 ruby "2.7.2"
+
+gem 'capybara'

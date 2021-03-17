@@ -6,6 +6,6 @@ class Battle < Sinatra::Base
 	set :session_secret, 'Snake'
 
 	get '/' do
-		'Battle'
+		'Testing infrastructure working!'
 	end
 end
