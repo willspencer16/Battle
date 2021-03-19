@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player.rb'
 
 class Battle < Sinatra::Base
 	enable :sessions
@@ -6,7 +7,6 @@ class Battle < Sinatra::Base
 	set :session_secret, 'Snake'
 
 	get '/' do
-		'Testing infrastructure working!'
 		erb :index
 	end
 
@@ -22,4 +22,11 @@ class Battle < Sinatra::Base
 		erb :play
 	end
 
+	get '/attack' do
+		@player_1 = session[:player_1]
+		@player_2 = session[:player_2]
+		erb :attack
+	end
+
+	run! if app_file == $0
 end
